@@ -1,0 +1,10 @@
+flask
+flask_cors
+flask_cli
+numpy
+pandas
+matplotlib
+scikit-learn
+gunicorn
+
+# Este es un comentario para forzar el caché
