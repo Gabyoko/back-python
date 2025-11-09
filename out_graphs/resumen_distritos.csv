@@ -1,0 +1,5 @@
+district,crime_total,graphml,preview_png,nodes,edges
+Chorrillos,68290.0,out_graphs\graphs\chorrillos.graphml,out_graphs\images\chorrillos.png,3728,10003
+San Juan de Miraflores,79161.0,out_graphs\graphs\san_juan_de_miraflores.graphml,out_graphs\images\san_juan_de_miraflores.png,4840,13110
+Villa El Salvador,84250.0,out_graphs\graphs\villa_el_salvador.graphml,out_graphs\images\villa_el_salvador.png,6615,17393
+Villa María del Triunfo,104959.0,out_graphs\graphs\villa_maria_del_triunfo.graphml,out_graphs\images\villa_maria_del_triunfo.png,6814,18563
