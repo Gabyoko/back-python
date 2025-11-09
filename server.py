@@ -23,7 +23,19 @@ def resolve_district(name_or_slug: str) -> tuple[str, str]:
     raise ValueError("Distrito inválido")
 
 def run_async(district_name: str, k: int):
-    planner.run_for_district(district_name, k)
+    try:
+        print(f"------------ [Thread] ------------")
+        print(f"[Thread] Iniciando cálculo para: {district_name}, k={k}")
+        planner.run_for_district(district_name, k)
+        print(f"[Thread] Cálculo TERMINADO para: {district_name}")
+        print(f"----------------------------------")
+    except Exception as e:
+        # Si el cálculo falla, lo veremos en el log
+        print(f"------------ [Thread] ------------")
+        print(f"[Thread] ERROR FATAL en run_async: {e}")
+        print(f"----------------------------------")
+        import traceback
+        traceback.print_exc() # Imprime el error completo
 
 @app.get("/")
 def root():
