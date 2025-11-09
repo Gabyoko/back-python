@@ -36,21 +36,12 @@ def favicon():
         return send_from_directory(BASE_DIR, "favicon.ico")
     return ("", 204)
 
-# --- INICIO DE LA CORRECCIÓN ---
 @app.get("/files/<path:subpath>")
 def files(subpath: str):
-    # 1. Definimos el directorio donde REALMENTE están los archivos.
-    files_dir = os.path.join(BASE_DIR, "out_runs")
-    
-    # 2. Comprobamos si el archivo existe dentro de "out_runs"
-    # full ahora será /.../back-python/out_runs/chorrillos/patrol_1.html
-    full = os.path.join(files_dir, subpath)
+    full = os.path.join(BASE_DIR, subpath)
     if not os.path.isfile(full):
-        abort(404) # No encontrado
-
-    # 3. Servimos el archivo desde el directorio "out_runs"
-    return send_from_directory(files_dir, subpath)
-# --- FIN DE LA CORRECCIÓN ---
+        abort(404)
+    return send_from_directory(BASE_DIR, subpath)
 
 @app.post("/api/run")
 def api_run():
